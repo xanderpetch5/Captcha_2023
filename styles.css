@@ -1,0 +1,113 @@
+*{ /* for all elements */
+    font-family: 'Roboto', sans-serif;
+    background-color: lightgray;
+    color: #333;
+    box-sizing: border-box;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: lightgray;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    min-height: 100vh;  /* makes sure that my footer can be reached by scrolling */
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+
+#canvasList {
+    display: flex; /* making the canvases react with resolution */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+}
+
+#canvasList canvas {
+    margin: 1vw;
+    border-radius: 1vw;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* giving a shadow */
+}  
+
+
+#submitButton, #reload{
+    padding: 10px 20px; /* constant padding so the button stays readable for all users */
+    display: block;
+    margin: 1vw auto;
+    border-radius: 1vw;
+    font-size: larger;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+#submitButton:hover, #reload:hover{ /* bahviour for hovering */
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+#resultCanvas{ 
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 100%; /* making the canvas look like a circle */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+footer { /* making the footer stand out against the body */
+    width: 80%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 1vw;
+    background-color: gray;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer h2 {
+    margin-bottom: 1rem;
+    background-color: gray;
+}
+
+footer p {
+    line-height: 1.6;
+    background-color: gray;
+}
+
+
+@media (max-width:600px){  /* small devices */
+    #canvasList{
+        grid-template-columns: repeat(1,1fr);
+        gap: 0.5vw;
+    }
+}
+
+@media (min-width:601px) and (max-width:1000px){ /* medium devices */
+    #canvasList{
+        grid-template-columns: repeat(2,1fr);
+        gap: 0.5vw;
+    }
+}
+
+@media (min-width:1001px){ /* large devices */
+    #canvasList{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

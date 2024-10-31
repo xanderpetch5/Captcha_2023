@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Captcha</title> 
+</head>
+
+<body>
+    <header>
+        <h1>AlexanderCaptcha</h1> <!-- Title -->
+        <button id="reload" onclick="reload()">Reinitialize</button> <!-- button that reloads page -->
+    </header> 
+
+    <main>
+        <h2 id="selectText">Select all</h2> <!-- Text that shows which images to select -->
+        <div id="canvasList"> 
+            <canvas id="canvas1" width="200" height="100"></canvas>
+            <canvas id="canvas2" width="200" height="100"></canvas>
+            <canvas id="canvas3" width="200" height="100"></canvas>
+            <canvas id="canvas4" width="200" height="100"></canvas>
+            <canvas id="canvas5" width="200" height="100"></canvas>
+        </div>
+        <button id="submitButton" onclick="submitClicked(correctImage)">Submit</button> <!-- Button which submits choices -->
+        <h3 id="result">~</h3> 
+        <canvas id="resultCanvas" width ="100" height="100"></canvas> <!-- Result image -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+    <footer>
+        <h2>Information</h2>
+        <p>This program is designed to show 5 different images, of 2 different types: a sun or a snowflake. The user is then meant to select all of whichever image is specified at the top of the page. They are allowed 2 tries to get this correct, after which they will either be successful or unsuccessful (shown by the image at the bottom). The main focus of this website is to show off basic understanding of javascript. The grid of images is responsive and adjusts its layout based on the screen size to provide a good user experience on both mobile and desktop devices. </p>
+    </footer>
+    
+</html>
